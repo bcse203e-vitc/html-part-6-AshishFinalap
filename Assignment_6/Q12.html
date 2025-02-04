@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remove Duplicates</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        input, button { margin: 10px; padding: 5px; }
+    </style>
+</head>
+<body>
+    <h3>Remove Duplicates from an Array</h3>
+    <input type="text" id="array" placeholder="Enter numbers separated by commas">
+    <button onclick="removeDuplicates()">Remove</button>
+    <p id="result"></p>
+    <script>
+        function removeDuplicates() {
+            const arr = document.getElementById('array').value.split(',').map(Number);
+            const unique = arr.filter((value, index) => arr.indexOf(value) === index);
+            document.getElementById('result').innerText = Array Without Duplicates: ${unique};
+        }
+    </script>
+</body>
+</html>

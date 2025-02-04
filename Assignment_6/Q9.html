@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LCM Calculator</title>
+</head>
+<body>
+  <h1>LCM Calculator</h1>
+  <p>Enter two numbers to calculate their Least Common Multiple (LCM).</p>
+  
+  <label for="numA">Enter first number:</label>
+  <input type="number" id="numA" placeholder="e.g., 12">
+  
+  <label for="numB">Enter second number:</label>
+  <input type="number" id="numB" placeholder="e.g., 18">
+  
+  <button onclick="calculateLCM()">Calculate LCM</button>
+  
+  <div id="lcmResult" class="result"></div>
+  
+  <script>
+    
+    function gcd(a, b) {
+      a = Math.abs(a);
+      b = Math.abs(b);
+      while (b !== 0) {
+        const temp = b;
+        b = a % b;
+        a = temp;
+      }
+      return a;
+    }
+    
+ 
+    function lcm(a, b) {
+      if (a === 0 || b === 0) return 0;  
+      return Math.abs(a * b) / gcd(a, b);
+    }
+    
+ 
+    function calculateLCM() {
+      const a = parseInt(document.getElementById('numA').value, 10);
+      const b = parseInt(document.getElementById('numB').value, 10);
+      
+      if (isNaN(a) || isNaN(b)) {
+        document.getElementById('lcmResult').textContent = 'Please enter valid numbers for both inputs.';
+        return;
+      }
+      
+      const result = lcm(a, b);
+      document.getElementById('lcmResult').textContent = The LCM of ${a} and ${b} is ${result}.;
+    }
+  </script>
+</body>
+</html>

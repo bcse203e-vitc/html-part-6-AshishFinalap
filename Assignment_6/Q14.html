@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pangram Checker</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        input, button { margin: 10px; padding: 5px; }
+    </style>
+</head>
+<body>
+    <h3>Check If a String is a Pangram</h3>
+    <input type="text" id="sentence" placeholder="Enter a sentence">
+    <button onclick="isPangram()">Check</button>
+    <p id="result"></p>
+    <script>
+        function isPangram() {
+            const sentence = document.getElementById('sentence').value.toLowerCase();
+            const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+            const isPangram = alphabet.split('').every(char => sentence.includes(char));
+            document.getElementById('result').innerText = isPangram ? '✅ It is a pangram.' : '❌ Not a pangram.';
+        }
+    </script>
+</body>
+</html>

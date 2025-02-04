@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Second Smallest and Largest</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        input, button { margin: 10px; padding: 5px; }
+    </style>
+</head>
+<body>
+    <h3>Find Second Smallest and Second Largest Numbers</h3>
+    <input type="text" id="array" placeholder="Enter numbers separated by commas">
+    <button onclick="findSecondSmallestAndLargest()">Find</button>
+    <p id="result"></p>
+    <script>
+        function findSecondSmallestAndLargest() {
+            const arr = document.getElementById('array').value.split(',').map(Number).sort((a, b) => a - b);
+            const unique = [...new Set(arr)];
+            document.getElementById('result').innerText = 
+                Second Smallest: ${unique[1]}, Second Largest: ${unique[unique.length - 2]};
+        }
+    </script>
+</body>
+</html>

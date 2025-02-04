@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCD Finder</title>
+</head>
+<body>
+    <h1>GCD Finder</h1>
+    <label for="number1">Enter the first number:</label>
+    <input type="number" id="number1"><br><br>
+    <label for="number2">Enter the second number:</label>
+    <input type="number" id="number2"><br><br>
+    <button onclick="findGCD()">Find GCD</button>
+    <p id="result"></p>
+
+    <script>
+        function findGCD() {
+            var a = parseInt(document.getElementById("number1").value, 10);
+            var b = parseInt(document.getElementById("number2").value, 10);
+
+            if (isNaN(a) || isNaN(b) || a <= 0 || b <= 0) {
+                document.getElementById("result").innerText = "enter integers.";
+                return;
+            }
+
+            while (b !== 0) {
+                var temp = b;
+                b = a % b;
+                a = temp;
+            }
+
+            document.getElementById("result").innerText = "GCD: " + a;
+        }
+    </script>
+</body>
+</html>

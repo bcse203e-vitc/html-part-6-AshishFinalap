@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Longest Word</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        input, button { margin: 10px; padding: 5px; }
+    </style>
+</head>
+<body>
+    <h3>Find Longest Word in a Sentence</h3>
+    <input type="text" id="sentence" placeholder="Enter a sentence">
+    <button onclick="findLongestWord()">Find</button>
+    <p id="result"></p>
+    <script>
+        function findLongestWord() {
+            const sentence = document.getElementById('sentence').value;
+            const longest = sentence.split(' ').reduce((longest, word) => word.length > longest.length ? word : longest, "");
+            document.getElementById('result').innerText = Longest Word: ${longest};
+        }
+    </script>
+</body>
+</html>

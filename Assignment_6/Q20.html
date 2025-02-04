@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Character Count</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        input, button { margin: 10px; padding: 5px; }
+    </style>
+</head>
+<body>
+    <h3>Count Character Occurrences</h3>
+    <input type="text" id="string" placeholder="Enter string">
+    <button onclick="countCharacters()">Count</button>
+    <p id="result"></p>
+    <script>
+        function countCharacters() {
+            const str = document.getElementById('string').value;
+            const count = {};
+            for (let char of str) {
+                count[char] = (count[char] || 0) + 1;
+            }
+            document.getElementById('result').innerText = Counts: ${JSON.stringify(count)};
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Missing Number</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        input, button { margin: 10px; padding: 5px; }
+    </style>
+</head>
+<body>
+    <h3>Find Missing Number</h3>
+    <input type="text" id="array" placeholder="Enter numbers (1 to N) separated by commas">
+    <button onclick="findMissingNumber()">Find</button>
+    <p id="result"></p>
+    <script>
+        function findMissingNumber() {
+            const arr = document.getElementById('array').value.split(',').map(Number);
+            const n = arr.length + 1;
+            const total = (n * (n + 1)) / 2;
+            const sum = arr.reduce((acc, num) => acc + num, 0);
+            document.getElementById('result').innerText = Missing Number: ${total - sum};
+        }
+    </script>
+</body>
+</html>
